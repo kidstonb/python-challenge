@@ -1,6 +1,5 @@
 # Your task is to create a Python script that analyzes the records to calculate each of the following:
-# import pandas - try not to use for this assignment
-import csv 
+import csv
 import os 
 
 # variables initialization
