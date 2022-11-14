@@ -1,5 +1,3 @@
-# In this challenge, you are tasked with helping a small, rural town modernize its vote counting process.
-
 import os 
 import csv
 
@@ -30,11 +28,17 @@ for candidate in election:
         winning_candidate = candidate
         max_vote = election[candidate]
 
-# Print of results per candidate- total votes, percentages
+# Prints to terminal - results per candidate- total votes, percentages
 print('--------------------\nElection Results\n--------------------')
 print(f'Total Votes: {votes_total}\n--------------------')
 for candidate in election:
     print(f'{candidate}: {round(100*election[candidate]/votes_total,3)} % ({election[candidate]})')
 print(f'--------------------\nWinner: {winning_candidate}\n--------------------')
 
-# In addition, your final script should both print the analysis to the terminal and export a text file with the results.
+# exports summary to a text file 
+with open("Election_results.txt", 'w') as text:
+    text.write('--------------------\nElection Results\n--------------------\n')
+    text.write(f'Total Votes: {votes_total}\n--------------------\n')
+    for candidate in election:
+        text.write(f'{candidate}: {round(100*election[candidate]/votes_total,3)} % ({election[candidate]})\n')
+    text.write(f'--------------------\nWinner: {winning_candidate}\n--------------------')
