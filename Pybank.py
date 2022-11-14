@@ -43,7 +43,8 @@ print(f'Greatest Decrease in Profits: {lowest_date} (${lowest_profit})')
 print('----------------------------')
 
 # exports to a text file
-with open("Financial_Analysis.txt", 'w') as text:
+export = os.path.join("PyBank","Analysis","Financial_Analysis.txt")
+with open(export, 'w') as text:
     text.write('----------------------------\nFinancial Analysis\n----------------------------\n')
     text.write(f'Total Months: {len(profit_list)}\n')      
     text.write(f'Total: ${sum(profit_list)}\n')                   

@@ -36,7 +36,8 @@ for candidate in election:
 print(f'--------------------\nWinner: {winning_candidate}\n--------------------')
 
 # exports summary to a text file 
-with open("Election_results.txt", 'w') as text:
+export = os.path.join("PyPoll","Analysis","Election_results.txt")
+with open(export, 'w') as text:
     text.write('--------------------\nElection Results\n--------------------\n')
     text.write(f'Total Votes: {votes_total}\n--------------------\n')
     for candidate in election:
